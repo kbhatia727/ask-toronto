@@ -80,7 +80,10 @@ export async function getCrimeData(
   }
 
   rows.sort((a, b) => b.count - a.count)
-  rows = rows.slice(0, args.topN)
+  // Always show a ranking of at least 10 (unless a specific neighbourhood was asked),
+  // so the chart and choropleth stay informative even for "which one is highest?" questions.
+  const displayN = args.neighbourhood ? args.topN : Math.max(args.topN, 10)
+  rows = rows.slice(0, displayN)
 
   // Choropleth scoped to the top neighbourhoods shown in the chart, with decimated
   // polygon geometry. Keeps the payload small enough to stay within model token limits.

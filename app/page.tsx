@@ -116,12 +116,14 @@ export default function Home() {
         {status === 'error' && (
           <div className="flex justify-start">
             <div className="max-w-prose rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-              {error && /quota|rate.?limit|exceeded|429/i.test(error.message) ? (
+              {error &&
+              /quota|rate.?limit|exceeded|429|too large|tokens per minute|tpm/i.test(
+                error.message
+              ) ? (
                 <>
-                  <span className="font-medium">Daily request limit reached.</span> The free
-                  Gemini tier allows only ~20 chat requests per day for this model, and
-                  today&rsquo;s have been used. It resets at midnight Pacific time. To keep
-                  going now, switch the chat model to the Groq fallback (see README).
+                  <span className="font-medium">Rate limit reached.</span> The free AI tier
+                  limits how many requests you can make in a short window. Wait about a
+                  minute, then try again.
                 </>
               ) : (
                 <>
