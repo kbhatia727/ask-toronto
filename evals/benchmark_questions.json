@@ -1,0 +1,37 @@
+[
+  { "id": "q01", "question": "Which neighbourhood had the most break-ins in 2024?", "expected_dataset": "neighbourhood-crime-rates", "expected_tool": "getCrimeData", "expected_answer_contains": ["West Humber-Clairville"] },
+  { "id": "q02", "question": "Where were assaults most common across Toronto neighbourhoods in 2023?", "expected_dataset": "neighbourhood-crime-rates", "expected_tool": "getCrimeData", "expected_answer_contains": [] },
+  { "id": "q03", "question": "Which areas saw the highest auto theft in 2024?", "expected_dataset": "neighbourhood-crime-rates", "expected_tool": "getCrimeData", "expected_answer_contains": [] },
+  { "id": "q04", "question": "What neighbourhood reported the most robberies in 2022?", "expected_dataset": "neighbourhood-crime-rates", "expected_tool": "getCrimeData", "expected_answer_contains": [] },
+  { "id": "q05", "question": "Rank neighbourhoods by bike theft in 2024.", "expected_dataset": "neighbourhood-crime-rates", "expected_tool": "getCrimeData", "expected_answer_contains": [] },
+
+  { "id": "q06", "question": "What are the recent TTC subway delays?", "expected_dataset": "ttc-delay-data", "expected_tool": "getTtcDelays", "expected_answer_contains": [] },
+  { "id": "q07", "question": "How bad are delays on the Yonge-University line?", "expected_dataset": "ttc-delay-data", "expected_tool": "getTtcDelays", "expected_answer_contains": [] },
+  { "id": "q08", "question": "Show me transit delays on the Bloor-Danforth subway.", "expected_dataset": "ttc-delay-data", "expected_tool": "getTtcDelays", "expected_answer_contains": [] },
+  { "id": "q09", "question": "What is the average subway delay duration recently?", "expected_dataset": "ttc-delay-data", "expected_tool": "getTtcDelays", "expected_answer_contains": [] },
+  { "id": "q10", "question": "Which TTC delays happened at Bloor station?", "expected_dataset": "ttc-delay-data", "expected_tool": "getTtcDelays", "expected_answer_contains": [] },
+
+  { "id": "q11", "question": "Where can I find a swimming pool in Toronto?", "expected_dataset": "parks-splash-pads", "expected_tool": "getSplashPads", "expected_answer_contains": [] },
+  { "id": "q12", "question": "Find parks and recreation facilities near me.", "expected_dataset": "parks-splash-pads", "expected_tool": "getSplashPads", "expected_answer_contains": [] },
+  { "id": "q13", "question": "Show splash pads and pools across the city on a map.", "expected_dataset": "parks-splash-pads", "expected_tool": "getSplashPads", "expected_answer_contains": [] },
+  { "id": "q14", "question": "What recreation facilities are available in Scarborough parks?", "expected_dataset": "parks-splash-pads", "expected_tool": "getSplashPads", "expected_answer_contains": [] },
+  { "id": "q15", "question": "List some parks with amenities in Toronto.", "expected_dataset": "parks-splash-pads", "expected_tool": "getSplashPads", "expected_answer_contains": [] },
+
+  { "id": "q16", "question": "Show me recent building permits in Toronto.", "expected_dataset": "building-permits", "expected_tool": "getBuildingPermits", "expected_answer_contains": [] },
+  { "id": "q17", "question": "What new construction permits have been issued?", "expected_dataset": "building-permits", "expected_tool": "getBuildingPermits", "expected_answer_contains": [] },
+  { "id": "q18", "question": "Find building permits for demolition work.", "expected_dataset": "building-permits", "expected_tool": "getBuildingPermits", "expected_answer_contains": [] },
+  { "id": "q19", "question": "Which permits are for residential development?", "expected_dataset": "building-permits", "expected_tool": "getBuildingPermits", "expected_answer_contains": [] },
+  { "id": "q20", "question": "Show construction activity and development permits.", "expected_dataset": "building-permits", "expected_tool": "getBuildingPermits", "expected_answer_contains": [] },
+
+  { "id": "q21", "question": "How extensive is Toronto's bike lane network?", "expected_dataset": "cycling-network", "expected_tool": "getCyclingNetwork", "expected_answer_contains": [] },
+  { "id": "q22", "question": "Where are the cycle tracks in Toronto?", "expected_dataset": "cycling-network", "expected_tool": "getCyclingNetwork", "expected_answer_contains": [] },
+  { "id": "q23", "question": "Show bike lanes on Bloor Street.", "expected_dataset": "cycling-network", "expected_tool": "getCyclingNetwork", "expected_answer_contains": [] },
+  { "id": "q24", "question": "Map the city's cycling infrastructure.", "expected_dataset": "cycling-network", "expected_tool": "getCyclingNetwork", "expected_answer_contains": [] },
+  { "id": "q25", "question": "What bicycle routes and trails exist downtown?", "expected_dataset": "cycling-network", "expected_tool": "getCyclingNetwork", "expected_answer_contains": [] },
+
+  { "id": "q26", "question": "Which restaurants were closed by Dinesafe inspections?", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] },
+  { "id": "q27", "question": "Show food premises that failed health inspections.", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] },
+  { "id": "q28", "question": "Find restaurant inspection results in Toronto.", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] },
+  { "id": "q29", "question": "Which establishments got a conditional pass on food safety?", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] },
+  { "id": "q30", "question": "Map restaurants with recent Dinesafe inspections.", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] }
+]

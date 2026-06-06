@@ -1,0 +1,62 @@
+[
+  {
+    "id": "neighbourhood-crime-rates",
+    "name": "Neighbourhood Crime Rates",
+    "description": "Reported crime counts and rates per 100,000 population by Toronto neighbourhood, broken down by offence type (assault, auto theft, break and enter, robbery, theft over, homicide, shooting) and year.",
+    "ckanPackageId": "neighbourhood-crime-rates",
+    "ckanResourceId": "d4160604-9f3e-4589-8821-9fd70fa350b3",
+    "tags": ["break-in", "robbery", "assault", "crime", "safety", "neighbourhood", "auto theft", "homicide"],
+    "tool": "getCrimeData",
+    "cacheTtlSeconds": 86400
+  },
+  {
+    "id": "ttc-delay-data",
+    "name": "TTC Delay Data",
+    "description": "TTC subway delay incidents including date, time, station, line, delay duration in minutes, gap, direction and the coded reason for each delay.",
+    "ckanPackageId": "ttc-subway-delay-data",
+    "ckanResourceId": "6088e14f-e46e-4f5c-9daa-dea1359ad396",
+    "tags": ["delay", "subway", "bus", "transit", "TTC", "route", "station", "line"],
+    "tool": "getTtcDelays",
+    "cacheTtlSeconds": 900
+  },
+  {
+    "id": "parks-splash-pads",
+    "name": "Parks & Recreation Facilities",
+    "description": "Locations of Toronto parks and recreation facilities including pools, splash pads, rinks and amenities, with address and point geometry for mapping facilities near a location.",
+    "ckanPackageId": "parks-and-recreation-facilities",
+    "ckanResourceId": "e8cd0f4d-4910-42a0-81f9-cf8c2218753a",
+    "tags": ["splash pad", "pool", "park", "swimming", "near me", "recreation", "facility"],
+    "tool": "getSplashPads",
+    "cacheTtlSeconds": 604800
+  },
+  {
+    "id": "building-permits",
+    "name": "Building Permits",
+    "description": "Active building permit applications in Toronto including permit type, status, work description, address, declared value and dates for construction and development activity.",
+    "ckanPackageId": "building-permits-active-permits",
+    "ckanResourceId": "6d0229af-bc54-46de-9c2b-26759b01dd05",
+    "tags": ["permit", "construction", "development", "zoning", "building"],
+    "tool": "getBuildingPermits",
+    "cacheTtlSeconds": 86400
+  },
+  {
+    "id": "cycling-network",
+    "name": "Cycling Network",
+    "description": "Toronto's cycling network infrastructure including bike lanes, cycle tracks, multi-use trails and sharrows, with installation year, street name and route geometry.",
+    "ckanPackageId": "cycling-network",
+    "ckanResourceId": "71fdb11f-99df-4f7b-8af1-d7240dae69b3",
+    "tags": ["bike lane", "cycling", "bicycle", "infrastructure", "cycle track", "trail"],
+    "tool": "getCyclingNetwork",
+    "cacheTtlSeconds": 86400
+  },
+  {
+    "id": "dinesafe",
+    "name": "Dinesafe Restaurant Inspections",
+    "description": "Toronto food premises inspection results under the Dinesafe program, including establishment name, address, inspection date, status (Pass/Conditional Pass/Closed), infraction details and severity.",
+    "ckanPackageId": "dinesafe",
+    "ckanResourceId": "4df989e6-e9b3-4e98-ba13-5ecfddaa8ae2",
+    "tags": ["restaurant", "food", "inspection", "health", "dine", "establishment"],
+    "tool": "getDinesafe",
+    "cacheTtlSeconds": 86400
+  }
+]
