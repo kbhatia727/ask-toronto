@@ -90,7 +90,7 @@ export async function getCrimeData(
     topRecords,
     'geometry',
     (r) => ({ name: str(r.AREA_NAME), value: num(r[column]) ?? 0 }),
-    3
+    6
   )
 
   return {
