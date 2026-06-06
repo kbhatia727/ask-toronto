@@ -7,27 +7,39 @@ CKAN API as a tool, and returns a **grounded** answer with a chart or map.
 > "Which neighbourhood had the most break-ins in 2024?"
 > → *West Humber-Clairville, with 155 reported incidents.* (+ ranked bar chart)
 
-Everything runs locally except LLM inference, which uses Google AI Studio's free tier.
+The app and databases run locally; LLM inference uses free cloud tiers
+(Groq for chat, Google Gemini for embeddings). New to the project? See the
+beginner-friendly **[PROJECT_GUIDE.md](PROJECT_GUIDE.md)**.
+
+---
+
+## Screenshots
+
+> Place images in `docs/screenshots/` (see that folder's README). They render here:
+
+| Grounded answer (chart + choropleth + source chips) | Clear error handling |
+|---|---|
+| ![Answer with chart and crime map](docs/screenshots/answer.png) | ![Daily limit message](docs/screenshots/error.png) |
 
 ---
 
 ## Architecture
 
-```
-Browser (chat + Recharts charts + MapLibre map)
-  └── POST /api/chat
-        └── Node route handler (TypeScript)
-              1. Embed question   → Google gemini-embedding-001 (768 dims)
-              2. RAG retrieval     → Qdrant → best-matching dataset
-              3. Router agent      → AI SDK v6 + gemini-2.5-flash
-                   (gets ONLY the selected dataset's tool)
-              4. Tool              → CKAN datastore_search → Postgres cache
-              5. Stream            → grounded answer + rows + geoJson
-                    │
-              ┌─────┼───────────┐
-           Google  Qdrant   Postgres (cache + history + eval results)
-           AI API              │
-                        Toronto CKAN API
+Full diagrams (system, router pattern, request lifecycle, infrastructure) render on
+GitHub in **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**. The system overview:
+
+```mermaid
+flowchart TD
+    User([User question]) --> UI[Browser: chat + charts + map]
+    UI -->|POST /api/chat| Route[Next.js route handler]
+    Route --> Embed[1 - Embed question] -->|gemini-embedding-001| Gemini[(Gemini)]
+    Embed --> RAG[2 - Match dataset] -->|nearest vector| Qdrant[(Qdrant)]
+    RAG --> Agent[3 - Router agent: ONE tool] -->|llama-3.3-70b| Groq[(Groq)]
+    Agent --> Tool[4 - Dataset tool] -->|live fetch| CKAN[(Toronto CKAN)]
+    Tool -->|cache + history| PG[(PostgreSQL)]
+    Tool -->|answer + rows + geoJson| Route --> UI
+    classDef ext fill:#eef,stroke:#557;
+    class Gemini,Groq,Qdrant,PG,CKAN ext;
 ```
 
 **The router pattern is the core design choice:** RAG selects a single dataset
