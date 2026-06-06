@@ -15,11 +15,11 @@ beginner-friendly **[PROJECT_GUIDE.md](PROJECT_GUIDE.md)**.
 
 ## Screenshots
 
-> Place images in `docs/screenshots/` (see that folder's README). They render here:
+> Images live in `docs/screenshots/` (see that folder's README for how to add them).
 
-| Grounded answer (chart + choropleth + source chips) | Clear error handling |
+| Restaurant inspections — map + source chips | Crime — ranked chart + choropleth |
 |---|---|
-| ![Answer with chart and crime map](docs/screenshots/answer.png) | ![Daily limit message](docs/screenshots/error.png) |
+| ![Dinesafe answer with map and source chips](docs/screenshots/answer.png) | ![Crime answer with chart and choropleth](docs/screenshots/crime.png) |
 
 ---
 

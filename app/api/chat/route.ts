@@ -49,6 +49,22 @@ function extractText(responseMessage: unknown): string {
   return ''
 }
 
+/**
+ * Keep only the text parts of each message. The router gives the agent a different
+ * tool per question, so previous turns' tool-call/tool-result parts (and our custom
+ * data-routing part) would reference tools that aren't in the current agent's tool
+ * set. Strict providers (Groq) reject that with "Failed to call a function". Stripping
+ * to text preserves conversational context without orphaned tool calls.
+ */
+function textOnlyHistory(messages: UIMessage[]): UIMessage[] {
+  return messages
+    .map((m) => ({
+      ...m,
+      parts: (m.parts ?? []).filter((p) => p.type === 'text'),
+    }))
+    .filter((m) => (m.parts?.length ?? 0) > 0)
+}
+
 export async function POST(req: Request): Promise<Response> {
   try {
     const { messages } = (await req.json()) as { messages: UIMessage[] }
@@ -87,7 +103,7 @@ export async function POST(req: Request): Promise<Response> {
 
         const agentStream = await createAgentUIStream({
           agent: routed.agent,
-          uiMessages: messages,
+          uiMessages: textOnlyHistory(messages),
           onFinish: async ({ responseMessage }) => {
             try {
               await ensureSchema()

@@ -5,8 +5,8 @@ exact names so they render automatically:
 
 | File | What to capture |
 |---|---|
-| `answer.png` | Ask *"Which neighbourhood had the most break-ins in 2024?"* and screenshot the reply — the confidence badge, bar chart, crime choropleth map, and source-attribution chips all in one shot. |
-| `error.png` | The red "Daily request limit reached" / error banner (or any clear error state). |
+| `answer.png` | Ask *"Where are the dirtiest restaurants?"* — the reply with the map of restaurants and the source-attribution chips (dataset, rows, live/cached, CKAN id). |
+| `crime.png` | Ask *"Which neighbourhood had the most break-ins in 2024?"* — the confidence badge, ranked bar chart, and the crime choropleth map. |
 
 ## How to capture (Windows)
 1. Run the app: `docker compose up -d` then `npm run dev`, open http://localhost:3000
