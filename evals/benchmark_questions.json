@@ -33,5 +33,10 @@
   { "id": "q27", "question": "Show food premises that failed health inspections.", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] },
   { "id": "q28", "question": "Find restaurant inspection results in Toronto.", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] },
   { "id": "q29", "question": "Which establishments got a conditional pass on food safety?", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] },
-  { "id": "q30", "question": "Map restaurants with recent Dinesafe inspections.", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] }
+  { "id": "q30", "question": "Map restaurants with recent Dinesafe inspections.", "expected_dataset": "dinesafe", "expected_tool": "getDinesafe", "expected_answer_contains": [] },
+  { "id": "q31", "question": "Which outdoor pools are open this weekend?", "expected_dataset": "toronto-pools", "expected_tool": "getPools", "expected_answer_contains": [] },
+  { "id": "q32", "question": "Find indoor swimming pools with lane swim times.", "expected_dataset": "toronto-pools", "expected_tool": "getPools", "expected_answer_contains": [] },
+  { "id": "q33", "question": "Which pools near Etobicoke have public swim hours?", "expected_dataset": "toronto-pools", "expected_tool": "getPools", "expected_answer_contains": [] },
+  { "id": "q34", "question": "Show wading pools open in July.", "expected_dataset": "toronto-pools", "expected_tool": "getPools", "expected_answer_contains": [] },
+  { "id": "q35", "question": "List pools with accessible entry across Toronto.", "expected_dataset": "toronto-pools", "expected_tool": "getPools", "expected_answer_contains": [] }
 ]
