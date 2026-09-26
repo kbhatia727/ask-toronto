@@ -31,3 +31,6 @@ Thumbs.db
 *.pem
 .vscode/
 .idea/
+
+# ---- CI reports (generated) ----
+/ci-report/

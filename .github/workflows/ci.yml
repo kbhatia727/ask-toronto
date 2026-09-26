@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "test/**"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  catalog-validation:
+    name: Catalog & golden-set validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate dataset catalog against eval golden set
+        run: node scripts/validate_catalog.mjs
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-validation-report
+          path: ci-report/
+          if-no-files-found: error
+          retention-days: 7
+
+  typecheck:
+    name: TypeScript typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tsc --noEmit
+        run: |
+          mkdir -p ci-report
+          npx tsc --noEmit 2>&1 | tee ci-report/typecheck.log
+
+      - name: Upload typecheck log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: typecheck-log
+          path: ci-report/typecheck.log
+          if-no-files-found: error
+          retention-days: 7
