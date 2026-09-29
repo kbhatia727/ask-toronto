@@ -31,10 +31,6 @@ export default function Home() {
 
   return (
     <main className="flex flex-col h-screen max-w-3xl mx-auto px-4 py-6">
-      <div className="mb-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-        <strong>Open Data Summit demo</strong>. Answers may use cached City of Toronto data.
-      </div>
-
       <header className="mb-6">
         <h1 className="text-3xl font-bold text-blue-700">Ask Toronto</h1>
         <p className="text-sm text-gray-500 mt-1">
